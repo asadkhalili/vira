@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.rtl.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <link rel="stylesheet" href="css/welcomescreen.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<!-- Status bar overlay for full screen mode (PhoneGap) -->
+<div class="statusbar-overlay"></div>
+
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Left panel with reveal effect-->
+<div class="panel panel-left panel-reveal">
+    <div class="content-block">
+        <h3>پیک ویرا</h3>
+        <p>کاری از کانون آگهی و تبلیغات ویرا</p>
+        <p>پیک ویرا یک آگهی نامه تبلیغاتی است که در سطح شهر گلبهار و چناران چاپ و توزیع می شود. توزیع پیک رایگان بوده و آگهی های پیک توسط اپلیکیشن پیک ویرا نیز در دسترس قرار دارد.</p>
+        <p>ثبت نیازمندی ها در اپلیکیشن ویرا رایگان و آنی بوده و به راحتی می توانید کلیه نیازمندی های خود را در اپلیکیشن ویرا به طور رایگان و سریع ثبت نمایید.</p>
+        <hr>
+        <p>آدرس کانون: گلبهار، بلوار پرند، مجتمع تجاری دلفین، ورودی دوم، واحد 22</p>
+        <p>تلفکس: 051-38326928</p>
+        <p>سایت: www.viraadv.ir</p>
+    </div>
+</div>
+
+<!-- Views -->
+<div class="views" style="display: none">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                <div class="center sliding">
+                    <img src="images/app-logo.png" style="width:60px "> &nbsp;&nbsp;
+                    پیک ویرا
+                </div>
+                <div class="right">
+                    <!--
+                      Right link contains only icon - additional "icon-only" class
+                      Additional "open-panel" class tells app to open panel when we click on this link
+                    -->
+                    <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                </div>
+                <div class="subnavbar">
+                    <div class="buttons-row">
+                        <a href="index.html" class="button active indexTabs" data-type="orders">آگهی ها</a>
+                        <a href="needs.html" class="button indexTabs" data-type="needs">نیازمندی ها</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="index" class="page">
+
+                <!-- Scrollable page content -->
+                <div class="page-content infinite-scroll infinite-scroll-1 pull-to-refresh-content pull-refresh-1" style="padding-top: 100px;">
+                    <div class="pull-to-refresh-layer" id="test">
+                        <div class="preloader"></div>
+                        <div class="pull-to-refresh-arrow"></div>
+                    </div>
+                    <div id="getOrders">
+
+                    </div>
+                    <!-- Preloader -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        <div class="toolbar toolbar-bottom">
+            <div class="toolbar-inner">
+                <a href="index.html" data-page = 'index' class="toolbarLink link active">
+                    <i class="f7-icons">home</i>
+                </a>
+                <a href="category.html" data-page = 'category' class="toolbarLink link">
+                    <i class="f7-icons">list_fill</i>
+                </a>
+                <a href="http://viraadv.ir/peyk/new" target="_system"  class="external">
+                    <i class="f7-icons">add_round_fill</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+<script type="text/javascript" src="js/welcomescreen.js"></script>
+<script type="text/javascript" src="js/jdate.js"></script>
+<script type="text/javascript" src="js/jdate.min.js"></script>
+<script type="text/javascript" src="js/telephonenumber.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>

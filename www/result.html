@@ -1,0 +1,43 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>بازگشت</span>
+            </a>
+        </div>
+        <div class="center sliding page-title-cat">دسته بندی ها</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+        </div>
+        <div class="subnavbar">
+            <div class="buttons-row">
+                <a href="result.html" class="resultOrderLink button active resultTabs" data-type="orders">آگهی
+                    ها</a>
+                <a href="result_needs.html" class="resultNeedLink button resultTabs" data-type="needs">نیازمندی
+                    ها</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="result" class="page">
+        <div class="page-content infinite-scroll infinite-scroll-3 pull-to-refresh-content pull-refresh-3" style="padding-top: 100px;">
+            <div class="pull-to-refresh-layer" id="test">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <div id="getResultOrders">
+            </div>
+            <!-- Preloader -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+            </div>
+            <div id="resultEmptyOrder" style="text-align: center">
+            </div>
+        </div>
+    </div>
+</div>

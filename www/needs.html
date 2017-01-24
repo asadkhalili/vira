@@ -1,0 +1,40 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+        <div class="center sliding">
+            <img src="images/app-logo.png" style="width:60px "> &nbsp;&nbsp;
+            پیک ویرا
+        </div>
+        <div class="right">
+            <!--
+              Right link contains only icon - additional "icon-only" class
+              Additional "open-panel" class tells app to open panel when we click on this link
+            -->
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+        </div>
+        <div class="subnavbar">
+            <div class="buttons-row">
+                <a href="index.html" class="button  indexTabs" data-type="orders">آگهی ها</a>
+                <a href="needs.html" class="button active indexTabs" data-type="needs">نیازمندی ها</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pages navbar-through toolbar-through">
+    <div data-page="needs" class="page">
+        <div class="page-content infinite-scroll infinite-scroll-2 pull-to-refresh-content pull-refresh-2" style="padding-top: 100px;">
+            <div class="pull-to-refresh-layer" id="test2">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <div id="getNeeds">
+
+            </div>
+            <!-- Preloader -->
+            <div class="infinite-scroll-preloader2">
+                <div class="preloader"></div>
+            </div>
+        </div>
+    </div>
+</div>
